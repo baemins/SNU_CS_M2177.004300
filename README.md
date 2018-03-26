@@ -22,11 +22,11 @@ Cloud 사용 / GPU Instance 설정 / MNIST 예제의 3부분으로 나뉘어 있
 
 [5. VM 접속 및 GUI 사용 설정 (Remote desktop client 설치 및 연결)](#Ch5)
 
-[6. Python 버전 설정](#Ch6)
+[6. Jupyter Hub의 연결](#Ch8)
 
 [7. GPU/CPU 비교](#Ch7)
 
-[8. Local Jupyter Notebook과 Jupyter Hub의 연결](#Ch8)
+[8. Python 버전 설정(Option)](#Ch6)
 
 ### MNIST 예제
 [9. MNIST 예제 실습](#Ch9)
@@ -175,17 +175,13 @@ Azure 상의 Linux Virtual Machine을 사용시에 temporary disk (/dev/sdb1)에
 
 
 <a name="Ch6"></a>
-## 6. Python 버전 설정
+## 6. Jupyter Hub 연결
 
-Azure의 Data Science VM은 2가지 버전의 Python을 제공하고 있으며, 사용자의 선택에 맞게 사용할 수 있습니다. 아래 설정은 2가지 버전 중 하나를 선택하여 편리하게 사용할 수 있도록 설정하는 방법을 안내합니다.
+DSVM을 설치한 후, 외부에서 바로 Jupyter Hub에 연결해서 사용할 수 있습니다. 기본으로 8000 포트가 제공되고 있으며
 
-Python 2.7 버전은 /anaconda/bin에 설치되어 있습니다.
+```https://해당VM의PublicIP/8000``` 으로 접속할 수 있습니다. 브라우저에서 인증문제가 발생하지만, 계속 실행시키면 로그인 창이 뜨게 됩니다.
 
-```source /anaconda/bin/activate root```
-
-Python 3.5 버전은 /anaconda/envs/py35/bin에 설치되어 있습니다.
-
-```source /anaconda/bin/activate py35```
+Jupyter Hub의 ID/PW는 해당머신의 우분투에 설정했던 값을 사용하면 됩니다.
 
 
 <a name="Ch7"></a>
@@ -199,44 +195,17 @@ Python 3.5 버전은 /anaconda/envs/py35/bin에 설치되어 있습니다.
 
 
 <a name="Ch8"></a>
-## 8. Local Jupyter Notebook과 Jupyter Hub의 연결
+## 8. Python 버전 설정(option)
 
-이 장에서는 편리한 사용을 위하여 Azure VM의 Jupyter를 서버로 만들고 원격에서 접속/사용하는 방법을 알아봅니다. 인내심이 충분하신 분들은 Skip하셔도 됩니다.
+Azure의 Data Science VM은 2가지 버전의 Python을 제공하고 있으며, 사용자의 선택에 맞게 사용할 수 있습니다. 아래 설정은 2가지 버전 중 하나를 선택하여 편리하게 사용할 수 있도록 설정하는 방법을 안내합니다.
 
-Azure에서 먼저 Private IP를 확인합니다. Private IP는 VM의 Properties 항목에서 확인할 수 있습니다.
+Python 2.7 버전은 /anaconda/bin에 설치되어 있습니다.
 
-원격접속을 설정할 config 파일을 생성합니다.
+```source /anaconda/bin/activate root```
 
-```$ jupyter notebook --generate-config```
+Python 3.5 버전은 /anaconda/envs/py35/bin에 설치되어 있습니다.
 
-원격접속시 사용할 비밀번호를 생성합니다.
-
-```$ jupyter notebook password```
-
-```Enter password: ********```
-
-```Verify password: ********```
-
-```[NotebookPasswordApp] Wrote hashed password to /Users/you/.jupyter/jupyter_notebook_config.json```
-
-
-이제 config파일을 직접 수정하여 원격접속을 설정합니다. 
-
-```$ code ~/.jupyter/jupyter_notebook.config.py```
-
-하단의 아래 3줄 코드를 추가합니다.
-
-```c.NotebookApp.ip = 'Azure VM의 Private IP'```
-
-```c.NotebookApp.password = 'jupyter_notebook_config.json내의 hash한 비밀번호'```
-
-```c.NotebookApp.open_browser = False```
-
-파일을 저장후 노트북을 실행합니다.
-
-```$ jupyter notebook```
-
-외부에서는 VM의 Public IP:port로 접근합니다. 이때, Azure에서 포트를 추가로 열어야 할수도 있습니다.
+```source /anaconda/bin/activate py35```
 
 
 <a name="Ch9"></a>
