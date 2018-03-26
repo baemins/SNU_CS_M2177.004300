@@ -79,7 +79,7 @@ Anaconda Python 2.7, 3.5 / Microsoft R Open / Jupyter Notebook Server / Jupyter 
 
 Azure에서 새로운 리소스 생성을 위해서 좌상단의 'Create a resource'를 클릭하십시오. 이후 나오는 검색 창에 'data science virtual machine'을 타이핑하면 아래와 같이 옵션이 보일 것입니다. Data Science Virtual Machine for Linux(Ubuntu)를 선택하십시오. 
 
-![vmcreation](Images/vmcreation.png)
+![vmcreation](Images/creation.png)
 
 해당 VM 이미지에 대한 설명이 나오고 하단의 'Create' 버튼을 클릭하여 다음 단계로 진행합니다.
 
