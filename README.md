@@ -132,7 +132,7 @@ Compute Type: GPU를 선택하십시오.
 
 배포를 성공적으로 마치면 이제 여러분의 대시보드 바탕화면에 아래와 같이 생성한 VM이 나타납니다.해당 아이콘을 클릭하여 자세히 살펴봅니다.
 
-![runningvm](Images/runningvm.png)
+![runningvm](Images/running.png)
 
 아이콘을 클릭하면 여러분의 VM에 대한 자세한 정보를 표시합니다. 상단에서는 VM의 상태를 control할 수 있습니다. 재시동을 위한 Restart버튼과 중지를 위한 Stop 버튼을 확인하여 주십시오. 중간의 Public IP에서 여러분의 VM이 할당받은 IP를 확인하십시오. 하단에서는 상태를 모니터링할 수 있습니다. 이제 상단의 Connect를 클릭하십시오.
 
