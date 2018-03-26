@@ -183,15 +183,22 @@ DSVM을 설치한 후, 외부에서 바로 Jupyter Hub에 연결해서 사용할
 
 Jupyter Hub의 ID/PW는 해당머신의 우분투에 설정했던 값을 사용하면 됩니다.
 
+이후 Start MyServer를 클릭하면 사용할 수 있습니다.
+
+----------------------
+VM 상의 ipynb 파일의 제출/교환
+
+Azure VM은 기본적으로 많은 보안 옵션이 설정되어 있어, 다른 서버로의 파일 전송에 또 다른 설정이 필요합니다. 가장 손쉬운 방법은 Jupyter에서 해당 파일을 로컬머신으로 다운로드하여 로컬머신에서 다른 email service 등을 이용하는 방법입니다.
+
 
 <a name="Ch7"></a>
 ## 7. CPU/GPU 성능 비교
 
 딥러닝에서의 GPU의 장점을 확인해보기 위하여 간단한 Python 예제코드를 실행해보고 결과를 비교해보도록 하겠습니다. 본 예제는 VM에서 직접 실행하지만, 8번의 과정 이후 Local Jupyter에서 실행해도 됩니다. 예제 실행을 통해 GPU 설정 및 인식도 함께 확인합니다.
 
-[CPU/GPU 실행 속도 비교 코드](https://gist.github.com/3h4/f6e9cabbead201056c4705c2590d3d21#file-0-matrix-py)
+Jupyter Hub 에서 New 선택후 'Python 3'으로 새로운 노트북을 생성합니다. 아래 코드를 붙여넣고 실행하여 주십시오.
 
-바탕화면의 Jupyter 아이콘을 더블 클릭하여 Jupyter에서 코드를 붙여 실행 가능합니다.
+[CPU/GPU 실행 속도 비교 코드](https://gist.github.com/3h4/f6e9cabbead201056c4705c2590d3d21#file-0-matrix-py)
 
 
 <a name="Ch8"></a>
@@ -211,3 +218,4 @@ Python 3.5 버전은 /anaconda/envs/py35/bin에 설치되어 있습니다.
 <a name="Ch9"></a>
 ## 9. MNIST 예제 실습
 
+![MNIST.ipynb](MNIST.ipynb)
