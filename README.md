@@ -83,19 +83,13 @@ Click 'Create' at bottom and go to the next step.
 
 At this blade, you can set basic parameters for your virtual machine. 
 
-Name is an identifier in your Azure dashboard to distinguish your current virtual machine. In this exercise, we will use 'MyFirstVM'. 
-
-VM Disk Type: Select **HDD**
-
-User Name: user account to log in your ubuntu OS. Please memorise carefully.
-
-Authentication type: Two ways are possible. SSH / Password. In this exercise, choose Password and keep it well. More than 3 different category among upper/lower/number/special character is needed and at least 12 bytes. When you forget your password, you can reset at Azure Portal - reset password menu. 
-
-Subscription: Make sure your subscription comes from TA
-
-Resource Group: logical group to manage your various resources. Choose 'create new' and put 'MyFirstRG'.
-
-Location: Not all the region has GPU machines. Select **'East US'** for GPU access.
+- **Name** is an identifier in your Azure dashboard to distinguish your current virtual machine. In this exercise, we will use 'MyFirstVM'. 
+- VM Disk Type: Select **HDD**
+- **User Name**: user account to log in your ubuntu OS. Please memorise carefully.
+- Authentication type: Two ways are possible. SSH / Password. In this exercise, choose **Password** and keep it well. More than 3 different category among upper/lower/number/special character is needed and at least 12 bytes. When you forget your password, you can reset at Azure Portal - reset password menu. 
+- **Subscription**: Make sure your subscription comes from TA
+- **Resource Group**: logical group to manage your various resources. Choose 'create new' and put 'MyFirstRG'.
+- **Location**: Not all the region has GPU machines. Select **'East US'** for GPU access.
 
 ![VM Basic](Images/vmbasic.png)
 
