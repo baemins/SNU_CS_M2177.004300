@@ -182,7 +182,7 @@ Go to your terminal at Ubuntu.
 
 When DSVM runs, only internet access is required to connect Jupyter Hub at DSVM. 8000 port is used. 
 
-```https://VM's_PublicIP/8000```  
+```https://VM's_PublicIP:8000```  
 Put it at your browser. Certificate issue will be raised. Use advanced setting by browser.
 
 ID/PW of Jupyter Hub are reflected those at your VM.
@@ -226,4 +226,4 @@ Python 3.5 :  /anaconda/envs/py35/bin
 <a name="Ch9"></a>
 ## 9. MNIST example
 
-![MNIST.ipynb](MNIST.ipynb)
+![Images\jupyter-sq-text.png](MNIST.ipynb)
