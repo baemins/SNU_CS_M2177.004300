@@ -34,7 +34,7 @@ Cloud setup / GPU Instance creation and connection / MNIST example
 
 (Skip if you already have Microsoft account)
 
-먼저, Microsoft의 Cloud서비스인 Azure를 사용하기 위한 계정생성이 필요합니다. [가입페이지](https://account.microsoft.com/account?lang=en-US)를 방문하여 계정을 생성하여 주시기 바랍니다.
+First of all, Microsoft ID is required to access Azure. Visit [Account creation page](https://account.microsoft.com/account?lang=en-US)and create Microsoft ID with any of your exising email address.
 
 ![Microsoft Account Page](Images/Microsoft_signin.png)
 
@@ -44,176 +44,192 @@ Click 'Sign in with Microsoft'
 
 Click 'Create One'
 
-Microsoft ID는 Microsoft의 서비스 이용을 위한 계정으로, outlook외에도 다른 이메일 계정(naver, gmail 등)으로 자유롭게 가입할 수 있습니다.
-
-가입을 마치면, 구독을 부여받기 위해 TA에게 해당 계정을 제출하여 주십시오.
+Once you complete the registration, please summit your email address to your TA to receive subscription.
 
 <a name="Ch2"></a>
-## 2. Azure 구독 확인
+## 2. Check Azure subscription
 
-Microsoft의 Cloud 서비스, Azure에 오신 것을 환영합니다. 여러분의 TA는 실습을 위해 사용할 수 있는 구독에 대한 접근을 부여해 주었을 것입니다. Azure의 Portal에서 이를 먼저 확인해 주십시오. 먼저 [Azure Portal](https://portal.azure.com)에 접속하여 주시기 바랍니다. 
+Welcome to Azure, cloud service of Microsoft. Your TA already have invited you to your subscription for this class. We will verify your subscription first. Please go to [Azure Portal](https://portal.azure.com) 
 
-왼쪽의 메뉴 하단에 '구독' 혹은 'Subscriptions' 메뉴를 확인하여 주십시오.
+Please click 'Subscriptions' menu at left bottom.
 ![Subscription Button](Images/subscriptionmenu.png)
 
-구독명을 클릭하여 부여받은 credit을 확인하여 주십시오. **한정된 자원**을 사용해야 하기에 실습을 진행하실 때 항상 잔액을 확인하여 주시기 바랍니다.
+By clicking your subscription name, you can mornitor your credit balance. Please remind that your credit is **limited** and you're liable to manage your own credit for this class.
 
-이미 Azure를 사용해본 경험이 있으시다면, 다른 여러 가지의 구독명을 보시게 됩니다. 반드시 수업용으로 제공된 구독을 사용해 주시기 바랍니다. 다른 구독을 사용하는 경우 등록한 신용카드로 과금이 발생할 수 있습니다. 수업용으로 제공하는 구독은 과금이 발생하지 않습니다.
+If you have experienced Azure before this class, you may see other subscriptions. You MUST use subscription from your TA, otherwise the other subscription will charge you, while the subscription from TA doesn't cost you at all.
 
 <a name="Ch3"></a>
-## 3. Azure 기초
+## 3. Azure 101
 
-축하합니다. 이제 여러분은 Microsoft의 Azure의 다양한 리소스를 이용할 수 있는 구독의 사용권을 받았습니다. Azure Portal은 이러한 다양한 서비스를 이용하고 관리할 수 있는 툴입니다. 
+Congraturations. Now you're permitted to utilize various Azure resources Azure. Azure Portal is web dashboard to use and monitor such services. 
 
-좌측의 즐겨찾기 메뉴를 통해 자주 사용하는 리소스를 편하게 접근할 수 있습니다. 생성한 리소스를 대시보드화하여 한눈에 모니터링하는 편리한 기능도 지원합니다.
-[Azure Portal Introduction](https://azure.microsoft.com/ko-kr/features/azure-portal/) 페이지를 방문하여 더 자세한 정보를 얻으실 수 있습니다.
+Favorite provides easy access for your frequent usage. You can create own dashboard to monitor your resources.
+Visit [Azure Portal Introduction](https://azure.microsoft.com/ko-kr/features/azure-portal/) and get more information.
 
 <a name="Ch4"></a>
-## 4. Azure에서 Linux GPU Virtual Machine 생성 (Data Science Virtual Machine)
+## 4. Linux GPU Virtual Machine (Data Science Virtual Machine)
 
-이제 실습을 위해 많은 연산을 수행할 GPU가 탑재된 Virtual Machine을 Azure Data Center 내에 생성해보도록 하겠습니다. Azure에서는 Windows/Linux의 OS가 설치된 가상머신(Virtual Machine)을 쉽게 배포할 수 있습니다. 금번 수업을 위해서는 OS 외에 추가로 Machine Learning을 위한 다양한 툴킷을 포함하고 있는 [Data Science VM](https://azure.microsoft.com/ko-kr/services/virtual-machines/data-science-virtual-machines/) 이미지를 사용합니다. 이를 통해 툴킷 설치에 필요한 많은 시간을 절약할 수 있습니다. Data Science VM은 아래의 툴킷을 포함하고 있습니다.
+Deploy Virtual Machine with GPU at Azure Data Center. In Azure, user can deploy virtual machine with Windows OS or Linux OS. For Deep learning purpose, Microsoft provides [Data Science VM](https://azure.microsoft.com/ko-kr/services/virtual-machines/data-science-virtual-machines/) including various toolkits within its image. User or researcher can save significant time to setup number of toolkits such as,
 
 Anaconda Python 2.7, 3.5 / Microsoft R Open / Jupyter Notebook Server / Jupyter Notebook Hub / Visual Studio Code / Atom / Vim / Git / Tensorflow / Caffe & Caffe2 / Torch / Keras / CUDA
 
-Azure에서 새로운 리소스 생성을 위해서 좌상단의 'Create a resource'를 클릭하십시오. 이후 나오는 검색 창에 'data science virtual machine'을 타이핑하면 아래와 같이 옵션이 보일 것입니다. Data Science Virtual Machine for Linux(Ubuntu)를 선택하십시오. 
+Click 'Create a resource' at left top. Type 'data science virtual machine' at search bar. Some options will be seen. Choose Data Science Virtual Machine for Linux(Ubuntu). 
 
 ![vmcreation](Images/creation.png)
 
-해당 VM 이미지에 대한 설명이 나오고 하단의 'Create' 버튼을 클릭하여 다음 단계로 진행합니다.
+Click 'Create' at bottom and go to the next step.
 
 1. Basics
 
-해당 화면에서는 여러분의 VM의 기초 설정을 할 수 있습니다. 
+At this blade, you can set basic parameters for your virtual machine. 
 
-Name은 앞으로 Azure 내에서 여러분의 VM을 식별하기 위한 이름입니다. 예제에서는 'MyFirstVM'으로 진행합니다. 
+Name is an identifier in your Azure dashboard to distinguish your current virtual machine. In this exercise, we will use 'MyFirstVM'. 
 
-VM Disk Type: HDD로 변경하여 주십시오.
+VM Disk Type: Select **HDD**
 
-User Name: 여러분의 Ubuntu에 로그인하기 위한 사용자 계정입니다. 생성후 잘 기억해 두십시오.
+User Name: user account to log in your ubuntu OS. Please memorise carefully.
 
-Authentication type: SSH 방식과 Password방식을 모두 지원합니다. 실습시나리오에서는 Password방식을 사용합니다. 대문자/소문자/숫자/특수문자 중 3가지 이상으로 12자리 이상을 이용해야 합니다. 마찬가지로 생성후 잘 기억해 두십시오. 
+Authentication type: Two ways are possible. SSH / Password. In this exercise, choose Password and keep it well. More than 3 different category among upper/lower/number/special character is needed and at least 12 bytes. When you forget your password, you can reset at Azure Portal - reset password menu. 
 
-Subscription: 반드시 TA에게 받은 구독이름이 맞는지 확인하여 주십시오.
+Subscription: Make sure your subscription comes from TA
 
-Resource Group: 다양한 리소스를 한데 모아 관리할 수 있게 해주는 논리적 그룹입니다. 실습 편의를 위해 'create new' 선택후 'MyFirstRG'을 사용합니다.
+Resource Group: logical group to manage your various resources. Choose 'create new' and put 'MyFirstRG'.
 
-Location: GPU 사용을 위해 'West US 2'를 선택하여 주십시오.
+Location: Not all the region has GPU machines. Select **'East US'** for GPU access.
 
 ![VM Basic](Images/vmbasic.png)
 
 2. Size
 
-이 곳에서는 여러분이 사용할 VM의 크기를 고를 수 있습니다. Azure에서는 용도에 맞게 쓸 수 있도록 다양한 규격의 VM을 제공하고 있습니다. 
+Here, you can choose VM option for various performance and purpose. Azure provides range of different VM. 
 
-Compute Type: GPU를 선택하십시오.
+Compute Type: Select **GPU**
 
-이제 하단에 여러분이 사용가능한 GPU Instance의 목록이 보입니다. NC6를 선택한 후 하단의 'Select' 버튼을 클릭하여 주십시오. NC시리즈는 머신러닝을 위한 연산에 특화한 GPU를 사용하고 있으며, NV는 비전처리에 특화되어 있습니다. GPU에 대해 좀더 자세히 알고 싶으신 분은 [Nvidia](https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwir6fb9v4HaAhWMoZQKHR_DC2IQFggpMAA&url=http%3A%2F%2Fwww.nvidia.com%2Fobject%2Ftesla-k80.html&usg=AOvVaw2UM_jLQqiHuJCYjUPaO71G)의 홈페이지를 방문해보시기 바랍니다.
+Now you will see number of GPU instances. (If you don't have any options here, please go to previous step and make sure your chosen Region). Select **NC6**, and click 'Select' at bottom. NC VM has compute special GPU chipset for machine learning. ND stands for fast interence. NV stands for visual processing. Please visit [Nvidia](https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwir6fb9v4HaAhWMoZQKHR_DC2IQFggpMAA&url=http%3A%2F%2Fwww.nvidia.com%2Fobject%2Ftesla-k80.html&usg=AOvVaw2UM_jLQqiHuJCYjUPaO71G)'s webpage for more information. 
 
 3. Settings
 
-이 곳에서는 고급 활용을 위한 환경 설정을 합니다. 금번 실습에서는 필요하지 않은 설정이니 Default를 유지한채 하단의 'OK'를 클릭하여 주십시오.
+This section is to set advanced settings, however, keep 'default' and click 'OK' at bottom. 
 
-- Availability Set: 복수의 Instance를 이용하여 항상성을 유지하기 위한 설정입니다.
-- Virtual Network: 클라우드 내에 가상 네트워크를 구축합니다.
-- Subnet: 가상 네트워크 내의 Subnet 설정입니다.
-- Public IP address: 여러분의 VM에 공용 IP를 부여하기 위한 설정입니다.
-- Network Security Group: 보안을 위한 방화벽 설정입니다.
+- **Availability Set** is a logical grouping capability that you can use in Azure to ensure that the VM resources you place within it are isolated from each other when they are deployed within an Azure datacenter.
+- **Virtual Network** and **Subnet** are your own private network in the cloud. 
+- **Public IP address** gives static public IP for VM. 
+- **Network Security Group** contains a list of security rules that allow or deny network traffic to resources connected to Azure Virtual Networks (VNet). 
 
 4. Create 
 
-이제 모든 과정을 마쳤으며, 하단의 동의 박스 체크와 Create 버튼 클릭을 통해 최종 작업을 수행합니다.
-버튼 클릭후 우상단에서 과정을 안내하며 약 4-5분 정도후 여러분의 첫 번째 Virtual Machine이 준비됩니다.
-
+You will see the summarization of your first VM. Click checkbox and 'create' button. Once you finish all the process, you will monitor your deployment at right top alert menu. 
 
 <a name="Ch5"></a>
-## 5. VM 접속 및 GUI 사용 설정
+## 5. VM connect and GUI client
 
-배포를 성공적으로 마치면 이제 여러분의 대시보드 바탕화면에 아래와 같이 생성한 VM이 나타납니다.해당 아이콘을 클릭하여 자세히 살펴봅니다.
+In few minutes, you will have your first VM and icon at your dashboard. Click the icon and take a look for a while.
 
 ![runningvm](Images/running.png)
 
-아이콘을 클릭하면 여러분의 VM에 대한 자세한 정보를 표시합니다. 상단에서는 VM의 상태를 control할 수 있습니다. 재시동을 위한 Restart버튼과 중지를 위한 Stop 버튼을 확인하여 주십시오. 중간의 Public IP에서 여러분의 VM이 할당받은 IP를 확인하십시오. 하단에서는 상태를 모니터링할 수 있습니다. 이제 상단의 Connect를 클릭하십시오.
+By clicking icon, detail information displays. At top, there is button for control VM - Restart, Start and Stop. Your VM's public IP is at mid point. At bottom, several monitoring stats are provided. Click 'Connect' at top.
 
--------------
-## Credit 관리를 위한 VM 사용팁
-
-GPU Instance는 고가의 자원이며, 수업용으로 제공하는 credit에는 제한이 있습니다. 딥러닝 연구 목적 특성 상 사용하지 않을 때는 반드시 Stop 버튼으로 VM의 사용을 중지하여 주십시오. Cloud 환경이기에 사용한 만큼만 지불을 하면 됩니다. Azure VM은 분당 과금체계이므로 사용한 분에 비례하여 credit이 차감됩니다. 따라서 실습을 마치면 반드시 Stop 버튼으로 VM의 시동을 꺼주십시오. 이후 다시 사용할때에는 Start 버튼을 통해 다시 시작할 수 있습니다. 
-
-------------
-
-VM에 대한 접근은 Putty나 Bash Shell 등을 이용할 수도 있습니다. 여기서는 Azure Portal내에서 제공하는 Cloud Shell을 통해 연결을 확인해봅니다.
+You can use preferred tools to access VM, such as Putty, Bash Shell. Here we will use Cloud Shell in Azure Portal.
 
 ![CloudShell](Images/cloudshell.png)
 
-우상단의 '>_' 모양 아이콘을 클릭하여 Cloudshell을 실행합니다. 하단에서 Bash Shell과 Powershell 가운데 Bash Shell을 선택하고, Shell 작업을 저장할 저장소를 생성하여 주십시오. 이제 Portal 내에서 Shell 명령어를 실행할 수 있습니다.
+Click icon '>_' at right top at Azure portal. Choose Bash Shell, and create storage where Shell commands will be saved. You can execute Shell scripts at Azure portal.
 
-하단의 Shell에서 이제 VM 접속을 위해 'ssh 생성한admin@부여받은IP'를 입력하십시오. (상단의 connect 버튼을 클릭하면 보입니다.) 비밀번호 입력을 거치고 나면 이제 Ubuntu 머신을 이용할 수 있습니다.
+```ssh Your User Name@Your public IP address```
 
-### Linux Virtual Machine 사용시 주의사항
+(You can see it by clicking 'Connect' button at top.)
 
-Azure 상의 Linux Virtual Machine을 사용시에 temporary disk (/dev/sdb1)에는 Data를 저장하지 마십시오. 해당 disk는 OS provision시 발생하는 temporary 파일을 저장하는 논리드라이브로써 VM을 끈 이후 새로 시작하는 경우 초기화될 수 있습니다. (Windows 머신의 D드라이브도 마찬가지입니다.)
+-------------
+## VM management tip to save your credit 
 
+GPU Instance highly costs and your credit is **limited**. When you're not using your GPU machine, make sure **STOP** your machine. Cloud environment allows you to pay as you go. Azure charges your credit minute-based calculation. Therefore, you can prevent unintended and unnecessary expenditure by stopping and restarting your machine.  
 
-### GUI 사용 설정
+------------
 
-커맨드 사용보다 편리한 이용을 위해 GUI 환경설정을 합니다. 여러분의 로컬 환경에 Client 소프트웨어를 설치해야 합니다. [X2Go](https://wiki.x2go.org/doku.php/doc:installation:x2goclient) 홈페이지에서 사용하는 OS에 맞는 Client를 설치하여 주십시오.
+## Warning for Linux Virtual Machine on Azure
 
-이후 X2Go를 실행한 후 아래 설정을 진행하여 주십시오.
+Do not save any of your data at **temporary disk (/dev/sdb1)** on Azure virtual machine. The disk is logical drive to save temporary files from OS provisioning. Reboot of VM may result in initialization at this place. (D drive at Windows machine, too)
 
-- New Session 생성
-- Session탭에서 
-- Host: VM의 IP
-- Login: 여러분의 admin 계정
-- SSH Port: 기본값 22를 사용합니다.
-- Session Type: XFCE로 변경
+------------
 
-이후 접속하고 비밀번호를 입력하고 나면, GUI 환경으로 Ubuntu를 이용할 수 있습니다. 
+## GUI Client
+
+DSVM provides easy GUI setup. Only installation of client application, [X2Go](https://wiki.x2go.org/doku.php/doc:installation:x2goclient) is needed. 
+
+Run X2Go client and setup for your VM.
+
+![X2go](Images/x2go.png)
+
+- Session > New Session
+- Host: your VM's public IP address
+- Login: your user name set at Azure portal
+- SSH Port: 22
+- Session Type: **XFCE**
+
+Click the session box, and put your password. 
 
 ![Ubuntu](Images/ubuntu.png)
 
+----------------
+## Ubuntu Update (optional)
+
+Go to your terminal at Ubuntu.
+
+```sudo apt-get update``` ## update package index
+
+```sudo apt-get upgrade``` ## upgrade all installed package
+
+```conda update conda``` ## Anaconda update
+
+----------------
 
 <a name="Ch6"></a>
-## 6. Jupyter Hub 연결
+## 6. Connect to Jupyter Hub
 
-DSVM을 설치한 후, 외부에서 바로 Jupyter Hub에 연결해서 사용할 수 있습니다. 기본으로 8000 포트가 제공되고 있으며
+When DSVM runs, only internet access is required to connect Jupyter Hub at DSVM. 8000 port is used. 
 
-```https://해당VM의PublicIP/8000``` 으로 접속할 수 있습니다. 브라우저에서 인증문제가 발생하지만, 계속 실행시키면 로그인 창이 뜨게 됩니다.
+```https://VM's_PublicIP/8000```  
+Put it at your browser. Certificate issue will be raised. Use advanced setting by browser.
 
-Jupyter Hub의 ID/PW는 해당머신의 우분투에 설정했던 값을 사용하면 됩니다.
+ID/PW of Jupyter Hub are reflected those at your VM.
 
-이후 Start MyServer를 클릭하면 사용할 수 있습니다.
+Click Start MyServer.
 
 ----------------------
-VM 상의 ipynb 파일의 제출/교환
+## ipynb file exchange at your server
 
-Azure VM은 기본적으로 많은 보안 옵션이 설정되어 있어, 다른 서버로의 파일 전송에 또 다른 설정이 필요합니다. 가장 손쉬운 방법은 Jupyter에서 해당 파일을 로컬머신으로 다운로드하여 로컬머신에서 다른 email service 등을 이용하는 방법입니다.
+Azure VM has several security options at default. The easiest way to upload and download file is to use Jupyter Hub with your web browser. 
 
 
 <a name="Ch7"></a>
-## 7. CPU/GPU 성능 비교
+## 7. CPU/GPU performance comparison
 
-딥러닝에서의 GPU의 장점을 확인해보기 위하여 간단한 Python 예제코드를 실행해보고 결과를 비교해보도록 하겠습니다. 본 예제는 VM에서 직접 실행하지만, 8번의 과정 이후 Local Jupyter에서 실행해도 됩니다. 예제 실행을 통해 GPU 설정 및 인식도 함께 확인합니다.
+To understand why Machine Learning requires GPU, let's execute simple python code below. Through this process, we can check the status of setup.
 
-Jupyter Hub 에서 New 선택후 'Python 3'으로 새로운 노트북을 생성합니다. 아래 코드를 붙여넣고 실행하여 주십시오.
+At Jupyter Hub
 
-[CPU/GPU 실행 속도 비교 코드](https://gist.github.com/3h4/f6e9cabbead201056c4705c2590d3d21#file-0-matrix-py)
+File > New Notebook > Python 3
+
+Copy and paste code below and Run
+
+[Simple Python code for comparison CPU/GPU](https://gist.github.com/3h4/f6e9cabbead201056c4705c2590d3d21#file-0-matrix-py)
 
 
 <a name="Ch8"></a>
-## 8. Python 버전 설정(option)
+## 8. Python version (option)
 
-Azure의 Data Science VM은 2가지 버전의 Python을 제공하고 있으며, 사용자의 선택에 맞게 사용할 수 있습니다. 아래 설정은 2가지 버전 중 하나를 선택하여 편리하게 사용할 수 있도록 설정하는 방법을 안내합니다.
+DSVM contains two different version of Python at each path. 
 
-Python 2.7 버전은 /anaconda/bin에 설치되어 있습니다.
+Python 2.7 : /anaconda/bin 
 
 ```source /anaconda/bin/activate root```
 
-Python 3.5 버전은 /anaconda/envs/py35/bin에 설치되어 있습니다.
+Python 3.5 :  /anaconda/envs/py35/bin
 
 ```source /anaconda/bin/activate py35```
 
 
 <a name="Ch9"></a>
-## 9. MNIST 예제 실습
+## 9. MNIST example
 
 ![MNIST.ipynb](MNIST.ipynb)
