@@ -180,10 +180,10 @@ Go to your terminal at Ubuntu.
 <a name="Ch6"></a>
 ## 6. Connect to Jupyter Hub
 
-When DSVM runs, only internet access is required to connect Jupyter Hub at DSVM. 8000 port is used. 
+When DSVM runs, only internet access is required to connect Jupyter Hub at DSVM. 8000 port is pre-configured. 
 
 ```https://VM's_PublicIP:8000```  
-Put it at your browser. Certificate issue will be raised. Use advanced setting by browser.
+*Put it at your browser. Certificate issue will be raised. Use advanced setting by browser.*
 
 ID/PW of Jupyter Hub are reflected those at your VM.
 
@@ -198,9 +198,9 @@ Azure VM has several security options at default. The easiest way to upload and 
 <a name="Ch7"></a>
 ## 7. CPU/GPU performance comparison
 
-To understand why Machine Learning requires GPU, let's execute simple python code below. Through this process, we can check the status of setup.
+To understand why Machine Learning requires GPU, let's execute simple python code below. Through this process, we can check the status of your environment.
 
-At Jupyter Hub
+*At Jupyter Hub*
 
 File > New Notebook > Python 3
 
@@ -214,11 +214,11 @@ Copy and paste code below and Run
 
 DSVM contains two different version of Python at each path. 
 
-Python 2.7 : /anaconda/bin 
+Python 2.7 - /anaconda/bin 
 
 ```source /anaconda/bin/activate root```
 
-Python 3.5 :  /anaconda/envs/py35/bin
+Python 3.5 - /anaconda/envs/py35/bin
 
 ```source /anaconda/bin/activate py35```
 
@@ -226,4 +226,4 @@ Python 3.5 :  /anaconda/envs/py35/bin
 <a name="Ch9"></a>
 ## 9. MNIST example
 
-![MNIST.ipynb](Images/jupyter-sq-text.png)
+![MNIST.ipynb](MNIST.ipynb)
