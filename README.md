@@ -226,4 +226,4 @@ Python 3.5 :  /anaconda/envs/py35/bin
 <a name="Ch9"></a>
 ## 9. MNIST example
 
-![MNIST.ipynb](Images\jupyter-sq-text.png)
+![MNIST.ipynb](Images/jupyter-sq-text.png)
