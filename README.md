@@ -1,50 +1,48 @@
-# 서울대학교 컴퓨터공학부 M2177.004300 딥러닝의 기초 실습
+# Hands on Labs for SNU Deep Learning M2177.004300, 2018 Spring semester
 
-수업의 실습을 위한 딥러닝 Infrastructure의 설정과 MNIST 예제 실습을 다룹니다. 
+This document aims to Deep learning infrastructure setup and MNIST practice 
 
-수강생을 위한 Azure credit은 TA에게 문의하여 주십시오.
+For Azure credit, please contact your TA
 
-사전 설치 프로그램: Jupyter Nodebook
+## Topic
 
-## 목차
+Cloud setup / GPU Instance creation and connection / MNIST example
 
-Cloud 사용 / GPU Instance 설정 / MNIST 예제의 3부분으로 나뉘어 있습니다.
+### Cloud setup
+[1. Microsoft ID creation for Azure service](#Ch1)
 
-### Cloud 사용
-[1. Azure 접속을 위한 Microsoft ID 생성](#Ch1)
+[2. Azure Subscription](#Ch2)
 
-[2. Azure 구독 확인](#Ch2)
+[3. Introduction to Azure](Ch3)
 
-[3. Azure 기초](Ch3)
+### GPU Instance creation
+[4. Linux GPU Virtual Machine creation on Azure (Data Science Virtual Machine)](#Ch4)
 
-### GPU Instance 설정
-[4. Azure에서 Linux GPU Virtual Machine 생성 (Data Science Virtual Machine)](#Ch4)
+[5. VM connect and GUI environment (Remote desktop client)](#Ch5)
 
-[5. VM 접속 및 GUI 사용 설정 (Remote desktop client 설치 및 연결)](#Ch5)
+[6. Connect to Jupyter Hub](#Ch8)
 
-[6. Jupyter Hub의 연결](#Ch8)
+[7. GPU/CPU comparison](#Ch7)
 
-[7. GPU/CPU 비교](#Ch7)
+[8. Using Python(Option)](#Ch6)
 
-[8. Python 버전 설정(Option)](#Ch6)
-
-### MNIST 예제
-[9. MNIST 예제 실습](#Ch9)
+### MNIST example
+[9. MNIST with Tensorflow](#Ch9)
 
 <a name="Ch1"></a>
-## 1. Azure 접속을 위한 Microsoft ID 생성
+## 1. Microsoft ID creation for Azure connect
 
-(이미 계정이 있는 분들은 생략하여 주십시오.)
+(Skip if you already have Microsoft account)
 
 먼저, Microsoft의 Cloud서비스인 Azure를 사용하기 위한 계정생성이 필요합니다. [가입페이지](https://account.microsoft.com/account?lang=en-US)를 방문하여 계정을 생성하여 주시기 바랍니다.
 
 ![Microsoft Account Page](Images/Microsoft_signin.png)
 
-'Sign in with Microsoft'를 클릭하십시오.
+Click 'Sign in with Microsoft'
 
 ![Microsoft Account Creation](Images/CreateAccount.png)
 
-'Create One'을 클릭하십시오.
+Click 'Create One'
 
 Microsoft ID는 Microsoft의 서비스 이용을 위한 계정으로, outlook외에도 다른 이메일 계정(naver, gmail 등)으로 자유롭게 가입할 수 있습니다.
 
