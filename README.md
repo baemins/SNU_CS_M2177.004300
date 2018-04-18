@@ -1,6 +1,6 @@
 # Hands on Labs for SNU Deep Learning M2177.004300, 2018 Spring semester
 
-This document aims to Deep learning infrastructure setup and MNIST practice 
+This document aims to Deep learning infrastructure setup and MNIST practice. Lecture slides are in Github. 
 
 For Azure credit, please contact your TA
 
@@ -210,7 +210,7 @@ Copy and paste code below and Run
 
 
 <a name="Ch8"></a>
-## 8. Python version (option)
+## 8. Python version (optional)
 
 DSVM contains two different version of Python at each path. 
 
